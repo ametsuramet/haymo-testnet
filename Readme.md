@@ -35,6 +35,7 @@ cd haymo-mining
 ```
 geth --networkid 234666 \
     --datadir ./data \
+    --bootnodes enode://2d76da5c2f785a4ab2e227db20e133e2882a79fc8767e83d21ee77949ec2a60abe8bc76aaf4ba78ca242627f57387b8a8bc4f734cc89c6af4d24835934d59238@128.199.116.213:30303
     --port 30303  \
     --ipcdisable  \
     --syncmode full  \
