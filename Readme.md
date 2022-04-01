@@ -48,5 +48,5 @@ exec geth  >/dev/null 2>> miner.log --networkid 234666 \
 
 - enter console
 ```
-geth --networkid 234666 --datadir ./data --syncmode full --http.api eth,net,web3,txpool --allow-insecure-unlock attach data/geth.ipc
+geth --networkid 234666 --datadir ./data attach data/geth.ipc
 ```
