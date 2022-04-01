@@ -33,19 +33,15 @@ cd haymo-mining
 ```geth --datadir ./data init genesis.json```
 - run geth console 
 ```
-geth --networkid 234666 \
-    --datadir ./data \
-    --bootnodes enode://2d76da5c2f785a4ab2e227db20e133e2882a79fc8767e83d21ee77949ec2a60abe8bc76aaf4ba78ca242627f57387b8a8bc4f734cc89c6af4d24835934d59238@128.199.116.213:30303
-    --port 30303  \
-    --ipcdisable  \
-    --syncmode full  \
-    --allow-insecure-unlock  \
-    --http  \
-    --http.corsdomain="*"  \
-    --http.port 8545  \
-    --unlock [change here with new account address]  \
-    --password password.txt  \
-    --mine \
-    --http.api debug,eth,web3,personal,net,admin,clique,txpool \
-    --http.vhosts=testnet1.haymo.network
+exec geth --networkid 234666 \
+    --cache 512 --port 30304 \
+    --nat extip:128.199.80.145 --maxpeers 50 \ 
+    --bootnodes enode://96ffe79f161207161d080df5f3793bdfadf1c8c9bbf93937975081160fdb123bb0943e49b4ca8010ca310bb89613bff76002dbe583468142f4d238bed2ff9f9d@128.199.80.145:30303  \
+    --unlock 0 
+    --password /signer.pass 
+    --mine 
+    --miner.gastarget 7500000 
+    --miner.gaslimit 10000000 
+    --miner.gasprice 1000000000
 ```
+
