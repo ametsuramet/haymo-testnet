@@ -31,7 +31,7 @@ cd haymo-mining
 
 - init geth with config file 
 ```geth --datadir ./data init genesis.json```
-- run geth console 
+- run geth  
 ```
 exec geth  >/dev/null 2>> miner.log --networkid 234666 \ 
      --datadir ./data \
@@ -46,3 +46,7 @@ exec geth  >/dev/null 2>> miner.log --networkid 234666 \
     --miner.gasprice 1000000000 &
 ```
 
+- enter console
+```
+geth --networkid 234666 --datadir ./data --syncmode full --http.api eth,net,web3,txpool --allow-insecure-unlock attach data/geth.ipc
+```
